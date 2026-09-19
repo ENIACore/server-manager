@@ -1,0 +1,12 @@
+{
+  "$schema": "https://pg-language-server.com/0.25.7/schema.json",
+  "db": {
+    "host": "127.0.0.1",
+    "port": 5432,
+    "username": "servermanager",
+    "password": "changeme",
+    "database": "servermanager",
+    "connTimeoutSecs": 10,
+    "disableConnection": false
+  }
+}
