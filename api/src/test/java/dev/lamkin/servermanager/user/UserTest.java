@@ -56,6 +56,22 @@ class UserTest {
         assertThat(user.isEnabled()).isFalse();
     }
 
+    @Test
+    void settersUpdateGeneratedFields() {
+        User user = new User("alice", "hashed-password", Role.USER, true);
+        UUID id = UUID.randomUUID();
+        Instant createdAt = Instant.parse("2024-01-01T00:00:00Z");
+        Instant updatedAt = Instant.parse("2024-01-02T00:00:00Z");
+
+        user.setId(id);
+        user.setCreatedAt(createdAt);
+        user.setUpdatedAt(updatedAt);
+
+        assertThat(user.getId()).isEqualTo(id);
+        assertThat(user.getCreatedAt()).isEqualTo(createdAt);
+        assertThat(user.getUpdatedAt()).isEqualTo(updatedAt);
+    }
+
     @Nested
     @DataJpaTest
     @Testcontainers
