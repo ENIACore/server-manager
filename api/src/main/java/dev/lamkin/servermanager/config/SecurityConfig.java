@@ -6,7 +6,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
-import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
@@ -34,7 +33,7 @@ public class SecurityConfig {
                 .failureHandler((req, res, auth) -> res.setStatus(HttpServletResponse.SC_FORBIDDEN)));
         http.exceptionHandling(exceptionHandlingCustomizer -> exceptionHandlingCustomizer
                 .authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED)));
-        http.csrf(AbstractHttpConfigurer::disable); // TODO
+        http.csrf(csrf -> csrf.disable()); // TODO
 
         return http.build();
 
