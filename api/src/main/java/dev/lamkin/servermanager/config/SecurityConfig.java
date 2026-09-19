@@ -16,6 +16,7 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 
+import dev.lamkin.servermanager.user.Role;
 import jakarta.servlet.http.HttpServletResponse;
 
 @Configuration
@@ -31,7 +32,7 @@ public class SecurityConfig {
     public SecurityFilterChain SecurityFilterChain(HttpSecurity http) {
         http.authorizeHttpRequests(authorize -> authorize
                 .requestMatchers("/public/**").permitAll()
-                .anyRequest().hasRole(UserRoles.USER_ROLE));
+                .anyRequest().hasRole(Role.USER.name()));
         http.formLogin(form -> form.loginPage("/login")
                 .successHandler((req, res, auth) -> res.setStatus(HttpServletResponse.SC_OK))
                 .failureHandler((req, res, auth) -> res.setStatus(HttpServletResponse.SC_FORBIDDEN)));
@@ -47,7 +48,7 @@ public class SecurityConfig {
     public UserDetailsService UserDetailService(PasswordEncoder encoder) {
         UserDetails user = User.withUsername("user")
                 .password(encoder.encode("password"))
-                .roles(UserRoles.USER_ROLE)
+                .roles(Role.USER.name())
                 .build();
         return new InMemoryUserDetailsManager(user);
     }
