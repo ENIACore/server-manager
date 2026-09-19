@@ -1,2 +1,6 @@
 api/scripts/env.sh
 postgres-language-server.jsonc
+
+.venv/
+venv/
+env/
