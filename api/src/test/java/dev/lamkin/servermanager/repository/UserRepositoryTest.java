@@ -1,4 +1,4 @@
-package dev.lamkin.servermanager.user;
+package dev.lamkin.servermanager.repository;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -6,6 +6,8 @@ import java.util.Optional;
 import java.util.UUID;
 
 import org.junit.jupiter.api.Test;
+import dev.lamkin.servermanager.entity.Role;
+import dev.lamkin.servermanager.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.data.jpa.test.autoconfigure.DataJpaTest;
 import org.springframework.boot.jdbc.test.autoconfigure.AutoConfigureTestDatabase;

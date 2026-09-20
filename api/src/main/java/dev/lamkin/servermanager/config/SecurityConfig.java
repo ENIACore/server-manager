@@ -11,7 +11,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 
-import dev.lamkin.servermanager.user.Role;
+import dev.lamkin.servermanager.entity.Role;
 import jakarta.servlet.http.HttpServletResponse;
 
 @Configuration

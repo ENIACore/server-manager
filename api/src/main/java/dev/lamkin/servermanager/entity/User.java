@@ -1,4 +1,4 @@
-package dev.lamkin.servermanager.user;
+package dev.lamkin.servermanager.entity;
 
 import java.time.Instant;
 import java.util.UUID;

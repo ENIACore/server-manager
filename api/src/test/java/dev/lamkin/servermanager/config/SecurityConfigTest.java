@@ -17,9 +17,9 @@ import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 
-import dev.lamkin.servermanager.user.Role;
-import dev.lamkin.servermanager.user.User;
-import dev.lamkin.servermanager.user.UserRepository;
+import dev.lamkin.servermanager.entity.Role;
+import dev.lamkin.servermanager.entity.User;
+import dev.lamkin.servermanager.repository.UserRepository;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
 @AutoConfigureMockMvc

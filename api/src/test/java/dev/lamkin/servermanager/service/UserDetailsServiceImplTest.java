@@ -1,4 +1,4 @@
-package dev.lamkin.servermanager.user;
+package dev.lamkin.servermanager.service;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
@@ -10,6 +10,10 @@ import java.util.Optional;
 import org.junit.jupiter.api.Test;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+
+import dev.lamkin.servermanager.entity.Role;
+import dev.lamkin.servermanager.entity.User;
+import dev.lamkin.servermanager.repository.UserRepository;
 
 class UserDetailsServiceImplTest {
 
